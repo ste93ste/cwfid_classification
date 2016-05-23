@@ -30,11 +30,11 @@ All images were acquired with the autonomous field robot Bonirob in an organic c
 
 \section{Assignment}
 
-The assignment is to create a Convolutional Neural Network that classificates the image in crop,weed or ground. 
+The assignment is to create a Convolutional Neural Network that classificates the images in crop,weed or ground. 
 
 \chapter{Extract patches from the dataset}
 
-This work was done by two collegues,Jorge Carpio López de Castro and  Andrea Luigi Edoardo Caielli, that work on the same project. 
+This work was done by two collegues,Jorge Carpio Lopez de Castro and  Andrea Luigi Edoardo Caielli, that work on the same project. 
 Here is the code:
 
 \begin{lstlisting}
@@ -154,7 +154,7 @@ fprintf('\nDone!!\n')
 
 \end{lstlisting}
 
-This script creates a dataset of 1000 $ 51\times51 $ patches for each class both for training and for testing. Later I splitted the testing dataset in two parts:
+This script creates a dataset of 1000 patches with dimension $ 51\times51\times3 $ for each class both for training and for testing. Later I splitted the testing dataset in two parts:
 \begin{itemize}
 \item first half of the patches for validation
 \item second half of patches for testing
@@ -557,7 +557,12 @@ Here are the 6 networks training graph. On the left side there is the objective 
 
 \section{Compute the accuracy of each network}
 
-Here is the code that I used in order to compute the accuracy of the network:
+Here is the code that I used in order to compute the accuracy of the network. It evalutates a training set that is composed, in order, of:
+\begin{enumerate}
+\item 500 crop patches
+\item 500 weed patches
+\item 500 ground patches
+\end{enumerate}
 
 \begin{lstlisting}
 clear
@@ -712,19 +717,156 @@ This is the training graph with a better combination of number of maps. This con
 \end{figure}
 
 \newpage
-\section{Understand the reason why the network fails}
+\section{Sliding window approach}
 
-In this section I tried to summarize why the network fails in some images. For the ground it only misses one time for this image
+In order to have a rough segmentation of the training set I also used to evaluate the network the sliding window approach. The code below shows how the approach was implemented. It use a stride of 10 and calculate for each image test the accuracy and the confusion matrix. The ground truth that I used to calculate these metrics was included into the CWFID dataset.  
 
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=1]{ground_fails/ground_fail.png}
-		\caption{ground fail}
-		\label{fig:GroundFail}
-	\end{center}
-\end{figure}
+\begin{lstlisting}
 
-As you can see this image is most likely a crop image as the network classificates it. As for the weed fail the network has only a 89,00\% of accuracy. 
+close all
+clear
+clc
+
+%define the size of the patches
+dim = 51;
+%define the stride of the sliding window
+stride = 10;
+%crop = 1, weed = 2, ground = 3
+crop = 1;
+weed = 2;
+ground = 3;
+
+% load the pre-trained CNN
+net = cnn_cwfid();
+%remove last layer: softmax  
+net.layers{end}.type = 'softmax';
+net.mode = 'test';
+
+testingDir = fullfile(vl_rootnn, 'data', 'cwfid','testing');
+testingSlidingWindowDir = fullfile(testingDir,'sliding window');
+annotationDir = fullfile(testingDir,'annotation');
+
+listing = dir(testingSlidingWindowDir);
+listing=listing(~ismember({listing.name},{'.','..','Thumbs.db'}));
+%get the testing image
+for i=1 : size(listing,1)
+    slidingWindowImTesting(:,:,:,i)=imread(fullfile(testingSlidingWindowDir,listing(i).name));
+end
+
+listing = dir(annotationDir);
+listing=listing(~ismember({listing.name},{'.','..','Thumbs.db'}));
+%get the annotation image
+for i=1 : size(listing,1)
+    AnnotationIm(:,:,:,i)=imread(fullfile(annotationDir,listing(i).name));
+end
+
+%for all the images
+for i=1 : size(slidingWindowImTesting,4)
+    cont1 = 1;
+    for j=1 : stride : (size(slidingWindowImTesting,2)-dim)
+       for k=1 : stride : (size(slidingWindowImTesting,1)-dim)
+           %get the patches
+           im(:,:,:,cont1) = single(imcrop(slidingWindowImTesting(:,:,:,i),...
+               [j,k,dim-1,dim-1]));
+           cont1 = cont1+1;
+       end
+    end
+    
+   %subtract the data mean 
+   dataMean = mean(im(:,:,:),3);
+   im = bsxfun(@minus, im, dataMean) ;
+   %evaluates the patches    
+   res = vl_simplenn(net, im);
+   scores = squeeze(gather(res(end).x)) ;
+   [bestScore, best] = max(scores) ;
+
+   I = reshape(best,int16((size(slidingWindowImTesting,1)-dim)/stride),...
+        int16((size(slidingWindowImTesting,2)-dim)/stride));
+   Icrop = reshape(scores(crop,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
+        int16((size(slidingWindowImTesting,2)-dim)/stride));
+   Icrop = imresize(Icrop,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]);
+   Iweed = reshape(scores(weed,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
+        int16((size(slidingWindowImTesting,2)-dim)/stride));
+   Iweed = imresize(Iweed,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]);
+   Iground = reshape(scores(ground,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
+        int16((size(slidingWindowImTesting,2)-dim)/stride));
+   Iground = imresize(Iground,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]); 
+   
+   %create an image with the best class with color: crop=green weed=red
+   %ground=black
+   for s=1 : size(I,1)
+        for v=1 : size(I,2)
+            if I(s,v) == crop
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,1) = 0;
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,2) = 255;
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,3) = 0;
+            end
+            if I(s,v) == weed
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,1) = 255;
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,2) = 0; 
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,3) = 0;
+            end
+            if I(s,v) == ground
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,1) = 0;
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,2) = 0;
+               Im((s-1)*stride+1:s*stride,(v-1)*stride+1:v*stride,3) = 0;
+            end
+        end
+   end
+   
+   figure
+   subplot(3,2,1)
+   imshow(slidingWindowImTesting(:,:,:,i));
+   title('original')
+   subplot(3,2,2)
+   imshow(AnnotationIm(:,:,:,i));
+   title('annotation')
+   subplot(3,2,3)
+   imshow(Im)
+   title('best')
+   subplot(3,2,4)
+   imagesc(Icrop),colorbar
+   title('crop')
+   subplot(3,2,5)
+   imagesc(Iweed),colorbar
+   title('weed')
+   subplot(3,2,6)
+   imagesc(Iground),colorbar
+   title('ground')
+   
+   %get the label from annotation and the predicted class
+   cont = 0;
+   for s = 1 : size(Im,1)
+       for v = 1 : size(Im,2)
+           cont= cont+1;
+           if AnnotationIm(s,v,1,i) == 255
+               label(cont)= weed;
+           else if AnnotationIm(s,v,2,i) == 255
+                    label(cont)= crop;
+                else 
+                label(cont)= ground;
+               end
+           end
+           if Im(s,v,1) == 255
+               predicted(cont)= weed;
+           else if Im(s,v,2) == 255
+                  predicted(cont)= crop;
+                else
+                predicted(cont)= ground;
+               end
+           end
+       end
+   end
+   
+   %calculate confusion matrix
+   C = confusionmat(label,predicted);
+   Accuracy = (C(1,1)+C(2,2)+C(3,3))/(C(1,1)+C(1,2)+C(1,3)+C(2,1)+C(2,2)...
+       +C(2,3)+C(3,1)+C(3,2)+C(3,3));
+   
+end
+
+\end{lstlisting}
+
 
 \chapter{Summary and future extensions}
 

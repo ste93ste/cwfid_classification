@@ -13,7 +13,7 @@
 \BOOKMARK [0][-]{chapter.4}{Evaluate the network}{}% 13
 \BOOKMARK [1][-]{section.4.1}{Compute the accuracy of each network}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.2}{Changing the number of maps of each convolutional filter}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.3}{Understand the reason why the network fails}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.3}{Sliding window approach}{chapter.4}% 16
 \BOOKMARK [0][-]{chapter.5}{Summary and future extensions}{}% 17
 \BOOKMARK [0][-]{chapter.6}{Appendix}{}% 18
 \BOOKMARK [1][-]{section.6.1}{Reference document}{chapter.6}% 19

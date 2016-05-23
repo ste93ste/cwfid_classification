@@ -46,6 +46,10 @@ for i=1 : size(slidingWindowImTesting,4)
            cont1 = cont1+1;
        end
     end
+    
+   %subtract the data mean 
+   dataMean = mean(im(:,:,:),3);
+   im = bsxfun(@minus, im, dataMean) ;
    %evaluates the patches    
    res = vl_simplenn(net, im);
    scores = squeeze(gather(res(end).x)) ;
