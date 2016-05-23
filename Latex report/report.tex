@@ -501,8 +501,7 @@ imdb.meta.classes = arrayfun(@(x)sprintf('%d',x),1:3,'uniformoutput',false) ;
 \end{lstlisting}
 
 The code before uses another function that trains the network. This function is already implement by the library. It is a learner implementing stochastich gradient descent with momentum to train the network. 
-It can be used with different datasets and tasks by providing a suitable getBatch function (implemented in  cnn\textunderscore cwfid.m). The function automatically restarts after each training epoch by checkpointing.The function supports training on CPU or on one or more GPUs (specify the list of GPU IDs in the `gpus` option). Multi-GPU
-support is relatively primitive but sufficient to obtain a noticable speedup.\\
+It can be used with different datasets and tasks by providing a suitable getBatch function (implemented in  cnn\textunderscore cwfid.m). The function automatically restarts after each training epoch by checkpointing.The function supports training on CPU or on one or more GPUs (specify the list of GPU IDs in the `gpus` option). Multi-GPU support is relatively primitive but sufficient to obtain a noticable speedup.\\
 Here are the 6 networks training graph. On the left side there is the objective function and on the right side there is the error function.
 
 \begin{figure}[h]
