@@ -11,6 +11,12 @@ crop = 1;
 weed = 2;
 ground = 3;
 
+%percentage of pixel for class based on training set
+groundPercentage = 0.925;
+cropPercentage = 0.0154;
+weedPercentage = 0.0596;
+
+
 % load the pre-trained CNN
 net = cnn_cwfid();
 %remove last layer: softmax  
@@ -41,31 +47,55 @@ for i=1 : size(slidingWindowImTesting,4)
     for j=1 : stride : (size(slidingWindowImTesting,2)-dim)
        for k=1 : stride : (size(slidingWindowImTesting,1)-dim)
            %get the patches
-           im(:,:,:,cont1) = single(imcrop(slidingWindowImTesting(:,:,:,i),...
+           im(:,:,:,cont1) = (imcrop(slidingWindowImTesting(:,:,:,i),...
                [j,k,dim-1,dim-1]));
+           if AnnotationIm(int32(k+dim/2-1),int32(j+dim/2-1),1,i) == 255
+               label(cont1)= weed;
+           else if AnnotationIm(int32(k+dim/2-1),int32(j+dim/2-1),2,i) == 255
+                    label(cont1)= crop;
+                else 
+                label(cont1)= ground;
+               end
+           end
            cont1 = cont1+1;
        end
     end
-    
-   %subtract the data mean 
-   dataMean = mean(im(:,:,:),3);
-   im = bsxfun(@minus, im, dataMean) ;
+   
+   %put the testing image all together
+    im = single(reshape(cat(4,im),51,51,3,[]));
+   
    %evaluates the patches    
-   res = vl_simplenn(net, im);
+   res = vl_simplenn(net,im);
    scores = squeeze(gather(res(end).x)) ;
-   [bestScore, best] = max(scores) ;
+   
+   %calculate ground threshold
+   groundScores = sort(scores(3,:),'descend');
+   thresholdGround = groundScores(int32(cont1*groundPercentage));
+   
+   %calculate crop threshold
+   cropScores = sort(scores(1,:),'descend');
+   thresholdCrop = cropScores(int32(cont1*cropPercentage));
+ 
+   for j=1 : size(scores,2)
+      if scores(3,j)> thresholdGround
+          best(j)= ground;
+      else if scores(1,j) > thresholdCrop
+              best(j) = crop;
+          else
+              best(j) = weed;
+          end
+      end
+   end
+   
 
+ %calculate confusion matrix
+   C = confusionmat(label,best);
+   Accuracy(i) = (C(1,1)+C(2,2)+C(3,3))/(C(1,1)+C(1,2)+C(1,3)+C(2,1)+C(2,2)...
+       +C(2,3)+C(3,1)+C(3,2)+C(3,3));
+   
    I = reshape(best,int16((size(slidingWindowImTesting,1)-dim)/stride),...
         int16((size(slidingWindowImTesting,2)-dim)/stride));
-   Icrop = reshape(scores(crop,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
-        int16((size(slidingWindowImTesting,2)-dim)/stride));
-   Icrop = imresize(Icrop,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]);
-   Iweed = reshape(scores(weed,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
-        int16((size(slidingWindowImTesting,2)-dim)/stride));
-   Iweed = imresize(Iweed,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]);
-   Iground = reshape(scores(ground,:),int16((size(slidingWindowImTesting,1)-dim)/stride),...
-        int16((size(slidingWindowImTesting,2)-dim)/stride));
-   Iground = imresize(Iground,[size(slidingWindowImTesting,1),size(slidingWindowImTesting,2)]); 
+  
    
    %create an image with the best class with color: crop=green weed=red
    %ground=black
@@ -90,52 +120,20 @@ for i=1 : size(slidingWindowImTesting,4)
    end
    
    figure
-   subplot(3,2,1)
+   subplot(3,1,1)
    imshow(slidingWindowImTesting(:,:,:,i));
    title('original')
-   subplot(3,2,2)
+   subplot(3,1,2)
    imshow(AnnotationIm(:,:,:,i));
    title('annotation')
-   subplot(3,2,3)
+   subplot(3,1,3)
    imshow(Im)
    title('best')
-   subplot(3,2,4)
-   imagesc(Icrop),colorbar
-   title('crop')
-   subplot(3,2,5)
-   imagesc(Iweed),colorbar
-   title('weed')
-   subplot(3,2,6)
-   imagesc(Iground),colorbar
-   title('ground')
    
-   %get the label from annotation and the predicted class
-   cont = 0;
-   for s = 1 : size(Im,1)
-       for v = 1 : size(Im,2)
-           cont= cont+1;
-           if AnnotationIm(s,v,1,i) == 255
-               label(cont)= weed;
-           else if AnnotationIm(s,v,2,i) == 255
-                    label(cont)= crop;
-                else 
-                label(cont)= ground;
-               end
-           end
-           if Im(s,v,1) == 255
-               predicted(cont)= weed;
-           else if Im(s,v,2) == 255
-                  predicted(cont)= crop;
-                else
-                predicted(cont)= ground;
-               end
-           end
-       end
-   end
-   
-   %calculate confusion matrix
-   C = confusionmat(label,predicted);
-   Accuracy = (C(1,1)+C(2,2)+C(3,3))/(C(1,1)+C(1,2)+C(1,3)+C(2,1)+C(2,2)...
-       +C(2,3)+C(3,1)+C(3,2)+C(3,3));
-   
+ end
+
+accuracyTot=0;
+for i=1: size(Accuracy)
+accuracyTot = accuracyTot+Accuracy(i)
 end
+accuracyTot = accuracyTot/i;

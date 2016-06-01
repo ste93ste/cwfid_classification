@@ -30,6 +30,11 @@ for i=1 : (size(listing,1) - 500)
 end
 
 data = single(reshape(cat(4,cropImTesting,weedImTesting,groundImTesting),51,51,3,[]));
+%put the testing image all together
+data = single(reshape(cat(4,cropImTesting,weedImTesting,groundImTesting),51,51,3,[]));
+%subtract the data mean 
+dataMean = mean(data(:,:,:),3);
+data = bsxfun(@minus, data, dataMean) ;
 
 % run the CNN
 net.eval({'input',data}) ;

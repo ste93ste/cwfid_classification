@@ -31,11 +31,14 @@ for i=1 : (size(listing,1) - 500)
     groundImTesting(:,:,:,i)=imread(fullfile(testingGroundDir,listing(i+500).name));
 end
 
+
 %put the testing image all together
 data = single(reshape(cat(4,cropImTesting,weedImTesting,groundImTesting),51,51,3,[]));
 %subtract the data mean 
 dataMean = mean(data(:,:,:),3);
 data = bsxfun(@minus, data, dataMean) ;
+
+
 
 %remove last layer: softmax  
 net.layers{end}.type = 'softmax';
@@ -82,5 +85,9 @@ end
 %accuracy ground
 accuracyGround = 1-error/500;
 
-%global accuracy of the network
-accuracy = (accuracyCrop+accuracyWeed+accuracyGround)/3;
+
+label = [ones(500,1);2*ones(500,1);3*ones(500,1)];
+%calculate confusion matrix
+C = confusionmat(label,best);
+Accuracy = (C(1,1)+C(2,2)+C(3,3))/(C(1,1)+C(1,2)+C(1,3)+C(2,1)+C(2,2)...
+       +C(2,3)+C(3,1)+C(3,2)+C(3,3));

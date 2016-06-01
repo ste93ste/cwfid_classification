@@ -1,15 +1,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces crop patch}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces weed patch}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces ground patch}}{4}{figure.2.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces network 1 training}}{15}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces network 2 training}}{16}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces network 3 training}}{17}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces network 4 training}}{18}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces network 5 training}}{19}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces network 6 training}}{20}{figure.3.6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of a Convolutional Neural Network}}{6}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces network 1 training}}{9}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces network 2 training}}{9}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces network 3 training}}{10}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces network 4 training}}{10}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces network 5 training}}{11}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces network 6 training}}{11}{figure.3.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces accuracy of the networks}}{23}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces accuracy VS number of maps; only the number of maps of the last filter layer is plotted in the graph}}{24}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces final training}}{25}{figure.4.3}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces accuracy of the networks}}{13}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces accuracy VS number of maps; only the number of maps of the last filter layer is plotted in the graph}}{14}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces final training}}{14}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces sliding window stride=10}}{16}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces annotation}}{16}{figure.4.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

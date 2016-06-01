@@ -5,16 +5,24 @@
 \BOOKMARK [0][-]{chapter.2}{Extract patches from the dataset}{}% 5
 \BOOKMARK [0][-]{chapter.3}{Training the network}{}% 6
 \BOOKMARK [1][-]{section.3.1}{MatConvNet library}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.2}{Build the architecture of the network}{chapter.3}% 8
-\BOOKMARK [2][-]{subsection.3.2.1}{Typical layer of a CNN}{section.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.2.2}{Typical architecture}{section.3.2}% 10
-\BOOKMARK [2][-]{subsection.3.2.3}{Selected architectures}{section.3.2}% 11
-\BOOKMARK [1][-]{section.3.3}{Train the network}{chapter.3}% 12
-\BOOKMARK [0][-]{chapter.4}{Evaluate the network}{}% 13
-\BOOKMARK [1][-]{section.4.1}{Compute the accuracy of each network}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.2}{Changing the number of maps of each convolutional filter}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.3}{Sliding window approach}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Summary and future extensions}{}% 17
-\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 18
-\BOOKMARK [1][-]{section.6.1}{Reference document}{chapter.6}% 19
-\BOOKMARK [1][-]{section.6.2}{Software and tool used}{chapter.6}% 20
+\BOOKMARK [1][-]{section.3.2}{What is a Convolutional Neural Network?}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.3}{Build the architecture of the network}{chapter.3}% 9
+\BOOKMARK [2][-]{subsection.3.3.1}{Typical layer of a CNN}{section.3.3}% 10
+\BOOKMARK [2][-]{subsection.3.3.2}{Typical architecture}{section.3.3}% 11
+\BOOKMARK [2][-]{subsection.3.3.3}{Selected architectures}{section.3.3}% 12
+\BOOKMARK [1][-]{section.3.4}{Train the network}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.4.1}{Create a validation set}{section.3.4}% 14
+\BOOKMARK [2][-]{subsection.3.4.2}{Stochastic gradient descent with momentum}{section.3.4}% 15
+\BOOKMARK [2][-]{subsection.3.4.3}{Function used}{section.3.4}% 16
+\BOOKMARK [2][-]{subsection.3.4.4}{Results of the training}{section.3.4}% 17
+\BOOKMARK [0][-]{chapter.4}{Evaluate the network}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Compute the accuracy of each network}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{Changing the number of maps of each convolutional filter}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Calculate Confusion Matrix}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.4}{Sliding window approach}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.5}{Umbalanced class problem}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Summary and future extensions}{}% 24
+\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 25
+\BOOKMARK [1][-]{section.6.1}{Repository}{chapter.6}% 26
+\BOOKMARK [1][-]{section.6.2}{Reference document}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.3}{Software and tool used}{chapter.6}% 28
