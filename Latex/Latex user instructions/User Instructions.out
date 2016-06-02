@@ -1,0 +1,16 @@
+\BOOKMARK [0][-]{chapter.1}{Purpose}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Prerequisites}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Configuration}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Download the material}{section.1.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Matlab code}{}% 5
+\BOOKMARK [1][-]{section.2.1}{cnn\137cwfid \137init \137*number.m}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{cnn\137cwfid.m}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{cnn\137cwfid\137evaluation\137simplenn.m}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{plot\137accuracy.m}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.5}{plot\137accuracy\137number\137of\137maps.m}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.6}{classUmbalancingThreshold.m}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.7}{slidingWindow.m}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Repository}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Reference document}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{Software and tool used}{chapter.3}% 16

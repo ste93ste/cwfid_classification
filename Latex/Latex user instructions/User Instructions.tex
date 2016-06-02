@@ -1,0 +1,131 @@
+\documentclass[]{report}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[]{mcode}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+% Title Page
+\title{Project: Image Analysis 2015/2016\\Anomaly Detection for Crop Monitoring:\\ User manual}
+
+\author{Stefano Cerri 849945}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Purpose}
+
+The purpose of this document is to help the user to understand how to replicate the experiment step-by-step.
+
+\section{Prerequisites}
+
+\subsection{Configuration}
+
+The configuration used in the project was:
+
+\begin{itemize}
+
+	\item Ubuntu 15.10
+	\item Matlab 2016a
+	\item MatconvNet 1.0-beta18
+
+\end{itemize}
+
+It works also with Mac OS but have some problems with Windows (in particular with Windows 10).
+
+\subsection{Download the material}
+
+The code, the dataset and MatConvNet library can be donloaded at this link: \url{https://github.com/ste93ste/cwfid_classification}.
+ 
+\chapter{Matlab code}
+
+All the matlab code can be found in cwfid\textunderscore classification/MatconvNet-1.0-beta18/matlab code/cwfid\textunderscore classification.
+
+\section{cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m}
+
+There are six different files with this name (the only part that changes is the final number. These files are functions that creates  different networks. You can find the description of the six types of network in the report.
+
+\section{cnn\textunderscore cwfid.m}
+
+This function is the core of the project. It calls the function cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m described before and it then calls the function cnn\textunderscore train.m to train the network. If you want to change and uses a different network you can modify line 36. The network 5 is the one that has best results and the default network.
+
+\begin{lstlisting}
+
+net = cnn_cwfid_init_5('batchNormalization', opts.batchNormalization, ...
+                     'networkType', opts.networkType) ;
+
+\end{lstlisting}
+
+If you change the network, remembet to delete the previous training folder because the function otherwise will not train another network because it reuses the precedent training results. The folder to be removed can be found at the path  cwfid\textunderscore classification/MatconvNet-1.0-beta18/data/ and its name is cwfid-baselinesimplenn-bnorm. 
+
+The function have also some attributes that can be modified such as:
+
+\begin{itemize}
+
+	\item vl\textunderscore compilenn('enableGpu', true); if you want to enableGpu. This can make the training faster but needs to have a dedicated and configured GPU. Default is false
+	\item opts.networkType = 'dagnn' ; if you want to use dagnn network istead simplenn. Dagnn were not used in this project because they have similar or worse results
+	
+
+\end{itemize}
+
+
+\section{cnn\textunderscore cwfid\textunderscore evaluation\textunderscore simplenn.m}
+
+This script evaluates the network by computing the accuracy and the confusion matrix. If no network was trained before it trains first the network and then evaluates it. There is also the correspectively script for dagnn
+
+\section{plot\textunderscore accuracy.m}
+
+This script plots the accuracy of the six networks. The accuracy of the networks were manually inserted after compute the script cnn\textunderscore cwfid\textunderscore evaluation\textunderscore simplenn.m for the specific network.
+
+\section{plot\textunderscore accuracy\textunderscore number\textunderscore of\textunderscore maps.m}
+
+This script plots the accuracy of the different configurations of number of maps for network 5. The accuracy of the configurations were manually inserted after compute the script cnn\textunderscore cwfid\textunderscore evaluation\textunderscore simplenn.m for the specific configuration.
+
+\section{classUmbalancingThreshold.m}
+
+This script count the percentage of frequency in the training set of crop,weed and ground used then in the slidingWindow.m script.
+
+\section{slidingWindow.m}
+
+This script uses the sliding window approach for all the images in the testing set and then calculate the accuracy.
+The value of the stride can be changed at line 8 (default is 10)
+
+\begin{lstlisting}
+
+%define the stride of the sliding window
+stride = 15;
+
+\end{lstlisting}
+
+
+\chapter{Appendix}
+
+\section{Repository}
+
+All the code, the dataset, the intermediate results and other documents can be found at this repository \url{https://github.com/ste93ste/cwfid_classification}
+
+\section{Reference document}
+ \begin{itemize}
+ 
+ 	\item\url{http://rd.springer.com/chapter/10.1007%2F978-3-319-16220-1_8}
+	
+ \end{itemize}
+
+\section{Software and tool used}
+
+\begin{itemize}
+	
+	\item LaTeX (\url{http://www.latex-project.org/}) : to redact and to format this document
+	
+	\item Matlab R2016a (\url{http://uk.mathworks.com/products/matlab/}) : to compute and 					  evaluate the network
+	
+	\item MatConvNet (\url{http://www.vlfeat.org/matconvnet/}) : MATLAB toolbox implementing 				  Convolutional Neural Networks (CNNs) 
+	 
+\end{itemize}
+
+
+
+\end{document}

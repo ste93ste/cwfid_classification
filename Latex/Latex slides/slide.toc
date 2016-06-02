@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Extract Patches}{6}{0}{2}
+\beamer@sectionintoc {3}{Train the network}{8}{0}{3}
+\beamer@sectionintoc {4}{Evaluate the network}{18}{0}{4}
+\beamer@sectionintoc {5}{Summary and future extensions}{28}{0}{5}

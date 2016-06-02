@@ -1,0 +1,16 @@
+\contentsline {chapter}{\numberline {1}Purpose}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Prerequisites}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Configuration}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Download the material}{2}{subsection.1.1.2}
+\contentsline {chapter}{\numberline {2}Matlab code}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}cnn\textunderscore cwfid.m}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}cnn\textunderscore cwfid\textunderscore evaluation\textunderscore simplenn.m}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}plot\textunderscore accuracy.m}{4}{section.2.4}
+\contentsline {section}{\numberline {2.5}plot\textunderscore accuracy\textunderscore number\textunderscore of\textunderscore maps.m}{4}{section.2.5}
+\contentsline {section}{\numberline {2.6}classUmbalancingThreshold.m}{4}{section.2.6}
+\contentsline {section}{\numberline {2.7}slidingWindow.m}{4}{section.2.7}
+\contentsline {chapter}{\numberline {3}Appendix}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Repository}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Reference document}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Software and tool used}{5}{section.3.3}

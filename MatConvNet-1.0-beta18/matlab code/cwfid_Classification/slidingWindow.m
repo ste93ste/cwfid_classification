@@ -11,7 +11,8 @@ crop = 1;
 weed = 2;
 ground = 3;
 
-%percentage of pixel for class based on training set
+%percentage of pixel for class based on training set. Calculate in the
+%classUmbalancingThreshold.m script
 groundPercentage = 0.925;
 cropPercentage = 0.0154;
 weedPercentage = 0.0596;

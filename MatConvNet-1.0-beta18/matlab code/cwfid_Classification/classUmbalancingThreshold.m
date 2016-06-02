@@ -1,3 +1,7 @@
+%This script calculates the frequency of crop,weed and ground in the
+%training set
+
+%training and annnotation directories
 trainingDir = fullfile(vl_rootnn, 'data', 'cwfid','training');
 annotationDir = fullfile(trainingDir,'annotation');
 
@@ -8,11 +12,13 @@ for i=1 : size(listing,1)
     AnnotationIm(:,:,:,i)=imread(fullfile(annotationDir,listing(i).name));
 end
 
+%reset the counter value
 ground = 0;
 weed = 0;
 crop = 0;
 tot = 0;
 
+%count the frequency of crop,weed and ground
 for i=1 : size(AnnotationIm,4)
     for j=1 : size(AnnotationIm,1)
         for k=1 :size(AnnotationIm,2)
@@ -29,6 +35,7 @@ for i=1 : size(AnnotationIm,4)
     end
 end
 
+%compute the percentage of the frequency of crop,weed and ground
 groundProb = ground/tot;
 weedProb = weed/tot;
 cropProb = crop/tot;

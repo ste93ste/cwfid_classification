@@ -1,0 +1,15 @@
+\beamer@slide {fig:crop sample}{7}
+\beamer@slide {fig:weed sample}{7}
+\beamer@slide {fig:ground sample}{7}
+\beamer@slide {fig:CNN}{9}
+\beamer@slide {fig:training1}{12}
+\beamer@slide {fig:training2}{13}
+\beamer@slide {fig:training3}{14}
+\beamer@slide {fig:training4}{15}
+\beamer@slide {fig:training5}{16}
+\beamer@slide {fig:training6}{17}
+\beamer@slide {fig: sliding window problem}{23}
+\beamer@slide {fig:annotation}{23}
+\beamer@slide {fig: sliding window 10 1}{27}
+\beamer@slide {fig:sliding window 10 2}{27}
+\beamer@slide {fig:bad sliding window result}{28}

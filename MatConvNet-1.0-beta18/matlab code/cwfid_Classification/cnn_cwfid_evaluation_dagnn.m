@@ -77,4 +77,10 @@ end
 
 accuracyGround = 1-error/500;
 
-accuracy = (accuracyCrop+accuracyWeed+accuracyGround)/3;
+%set labels
+label = [ones(500,1);2*ones(500,1);3*ones(500,1)];
+
+%calculate confusion matrix
+C = confusionmat(label,best);
+Accuracy = (C(1,1)+C(2,2)+C(3,3))/(C(1,1)+C(1,2)+C(1,3)+C(2,1)+C(2,2)...
+       +C(2,3)+C(3,1)+C(3,2)+C(3,3));

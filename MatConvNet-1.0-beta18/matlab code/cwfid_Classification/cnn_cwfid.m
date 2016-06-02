@@ -153,6 +153,7 @@ for i=1 : (size(listing,1) - 500)
     groundLabelValidation(i) = groundLabel;
 end
 
+%create the set of labels 1 is for training 2 is for validation
 set = [ones(1,numel([cropLabelTraining weedLabelTraining groundLabelTraining]))...
     2*ones(1,numel([cropLabelValidation weedLabelValidation groundLabelValidation]))];
 
