@@ -116,7 +116,7 @@ Politecnico di Milano \\ % Your institution for the title page
 
 \begin{frame}
 \frametitle{Scope}
-One of the most important tasks to be addressed in intelligent farms is the crop monitoring. Computer Vision and Machine Learning algorithms are typically combined to analyze and classify images acquired by autonomous robots that monitor the growth of crops, and in particular, to discriminate crops (i.e. the good plants) from weeds (any undesirable or unwanted plant growing wild, especially those that takes food or nourishment from crops). Crop/weed discrimination are often tacked as an image-classification problem.
+One of the most important tasks to be addressed in intelligent farms is the crop monitoring. Computer Vision and Machine Learning algorithms are typically combined to analyze and classify images acquired by autonomous robots that monitor the growth of crops, and in particular, to discriminate crops (i.e. the good plants) from weeds (any undesiderable or unwanted plant growing wild, especially those that takes food or nourishment from crops). Crop/weed discrimination are often tacked as an image-classification problem.
 \end{frame}
 
 %------------------------------------------------
@@ -211,7 +211,7 @@ There is also a manual\footnote{http://www.vlfeat.org/matconvnet/matconvnet-manu
 
 \begin{frame}
 \frametitle{Block of a CNN}
-The typical layer of a Convolutional Neural Network are:
+The typical layers of a Convolutional Neural Network are:
 
 \begin{itemize}
 
@@ -259,7 +259,7 @@ I selected different network architectures for comparing it, after the training,
 \begin{frame}
 
 \frametitle{Results of the training}
-Here are the 6 networks training graph. On the left side there is the objective function and on the right side there is the error function.
+Here are the 6 network training graphs. On the left side there is the objective function and on the right side there is the error function.
 
 \begin{figure}[h]
 	\begin{center}
@@ -372,7 +372,7 @@ Here are the 6 networks training graph. On the left side there is the objective 
 \begin{frame}
 \frametitle{Accuracy}
 
-In order to evaluate the network I calculate the accuracy. The accuracy can be computed as:
+In order to evaluate the network I calculated the accuracy. The accuracy can be computed as:
 
 \begin{center}
 
@@ -430,7 +430,7 @@ where $ TP = $ true positive , $ TN =$ true negative , $ FP =$ false positive  a
 \begin{frame}
 \frametitle{Confusion Matrix}
 
-I calculated also the confusion matrix, also known as an error matrix, that is a specific table layout that allows visualization of the performance of the classifier.
+I calculated also the confusion matrix, also known as error matrix, that is a specific table layout that allows visualization of the performance of the classifier.
 
 The Confusion matrix, for the testing set, is:
 
@@ -455,8 +455,8 @@ The Confusion matrix, for the testing set, is:
 \begin{itemize}
 
 	\item take a testing image. The size of the testing image is $ 966\times 1296\times 3$
-	\item extract patches from that.I used patches of dimension $ 51\times 51 \times 3 $. 				  I used two kind of stride: 10 and 15. So I obtained respectively $ 11500 $ and $ 		 		  5063 $ patches
-	\item make a new image the same size of the original testing image. On this image, I 					  painted the central pixel of each of the patches with a color depending on the best  		  class that the classifier choosed. The color used are the same of the annotation 		          image of the dataset CWFID so green for crop, red for weed and black for ground
+	\item extract patches from that.I used patches of size $ 51\times 51 \times 3 $. 				  I used two kind of stride: 10 and 15. So I obtained respectively $ 11500 $ and $ 		 		  5063 $ patches
+	\item make a new image the same size of the original testing image. On this image, I 					  painted the central pixel of each of the patches with a color depending on the best  		  class that the classifier choosed. The color used are the same of the annotation 		          image of the dataset CWFID:green for crop, red for weed and black for ground
 	\item repeat for all the images of the testing set
 
 \end{itemize}
@@ -467,7 +467,7 @@ The Confusion matrix, for the testing set, is:
 \begin{frame}
 \frametitle{Sliding Window Problem}
 
-Here are an example of the result of the sliding window
+Here is an example of the result of the sliding window
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
   \includegraphics[width=\linewidth]{stride10im1.png}
@@ -525,15 +525,9 @@ Solution:
 
 \frametitle{Results}
 The accuracy was 91,25\% for sliding window with stride 15 and 89,62\% for a stride of 10
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
+\begin{figure}[h]
   \includegraphics[width=\linewidth]{2.png}
   \caption{sliding window stride=10}\label{fig: sliding window 10 1}
-\endminipage\hfill
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{6.png}
-  \caption{sliding window stride=10}\label{fig:sliding window 10 2}
-\endminipage\hfill
 \end{figure}
 \end{frame}
 
@@ -547,7 +541,7 @@ The network fails when there are a lot of crop and weed with respect to the trai
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.62]{15.png}
+		\includegraphics[width=\linewidth]{15.png}
 		\caption{bad sliding window result}
 		\label{fig:bad sliding window result}
 	\end{center}

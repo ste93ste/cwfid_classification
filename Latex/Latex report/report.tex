@@ -21,7 +21,7 @@
 
 \section{Problem}
 
-One of the most important tasks to be addressed in intelligent farms is the crop monitoring. Computer Vision and Machine Learning algorithms are typically combined to analyze and classify images acquired by autonomous robots that monitor the growth of crops, and in particular, to discriminate crops (i.e. the good plants) from weeds (any undesirable or unwanted plant growing wild, especially those that takes food or nourishment from crops). Crop/weed discrimination are often tacked as an image-classification problem.
+One of the most important tasks to be addressed in intelligent farms is the crop monitoring. Computer Vision and Machine Learning algorithms are typically combined to analyze and classify images acquired by autonomous robots that monitor the growth of crops, and in particular, to discriminate crops (i.e. the good plants) from weeds (any undesiderable or unwanted plant growing wild, especially those that takes food or nourishment from crops). Crop/weed discrimination are often tacked as an image-classification problem.
 
 
 \section{Dataset}
@@ -35,8 +35,8 @@ The assignment is to create a Convolutional Neural Network, using deep learning,
 
 \chapter{Extract patches from the dataset}
 
-This work was done by two collegues,Jorge Carpio Lopez de Castro and  Andrea Luigi Edoardo Caielli, that work on the same project. 
-The script creates a dataset of patches (with dimension $ 51\times51\times3 $). A patch is a sub-region of an image that has a particular property. In our case there are three types of patches: crop patches, weed patches and ground patches. The result of the script is a dataset composed of:
+This work was done by two collegues,Jorge Carpio Lopez de Castro and Andrea Luigi Edoardo Caielli, that work on the same project. 
+The script creates a dataset of patches (with size $ 51\times51\times3 $). A patch is a sub-region of an image that has a particular property. In our case there are three types of patches: crop patches, weed patches and ground patches. The result of the script is a dataset composed of:
 
 \begin{itemize}
 	\item \textbf{3000 training patches} : 1000 crop, 1000 weed, 1000 ground 
@@ -66,7 +66,7 @@ Here some examples of patches:
 
 \section{MatConvNet library}
 
-To perform the given assignment I donloaded and installed MatConvNet library\footnote{http://www.vlfeat.org/matconvnet/}. Note that in order to use some functionalities of the library, such as using GPU acceleration, it has some requirements\footnote{http://www.vlfeat.org/matconvnet/gpu/}.
+To perform the given assignment I donloaded and installed MatConvNet library\footnote{http://www.vlfeat.org/matconvnet/}. Note that, in order to use some functionalities of the library, such as using GPU acceleration, it has some requirements\footnote{http://www.vlfeat.org/matconvnet/gpu/}.
 There is also a manual\footnote{http://www.vlfeat.org/matconvnet/matconvnet-manual.pdf} that explains all the blocks of a CNN both from the "mathematical" and "code function" view. The configuration that I used was:
 
 \begin{itemize}
@@ -78,7 +78,7 @@ There is also a manual\footnote{http://www.vlfeat.org/matconvnet/matconvnet-manu
 
 \section{What is a Convolutional Neural Network?}
 
-CNN is a type of feed-forward artificial neural network in which the connectivity pattern between its neurons is inspired by the organization of the animal visual cortex, whose individual neurons are arranged in such a way that they respond to overlapping regions tiling the visual field.It consist of multiple layers of small neuron collections which process portions of the input image, called receptive fields. The outputs of these collections are then tiled so that their input regions overlap, to obtain a better representation of the original image; this is repeated for every such layer. A more detailed description of the layer of a Convolutional Neural Network can be found in the next section.
+CNN is a type of feed-forward artificial neural network in which the connectivity pattern between its neurons is inspired by the organization of the animal visual cortex, whose individual neurons are arranged in such a way that they respond to overlapping regions tiling the visual field.It consists of multiple layers of small neuron collections which process portions of the input image, called receptive fields. The outputs of these collections are then tiled so that their input regions overlap, to obtain a better representation of the original image; this is repeated for every such layer. A more detailed description of the layers of a Convolutional Neural Network can be found in the next section.
 
 \begin{figure}[h]
 	\begin{center}
@@ -90,9 +90,9 @@ CNN is a type of feed-forward artificial neural network in which the connectivit
 \newpage
 \section{Build the architecture of the network}
 
-\subsection{Typical layer of a CNN}
+\subsection{Typical layers of a CNN}
 
-The typical layer of a Convolutional Neural Network are:
+The typical layers of a Convolutional Neural Network are:
 
 \begin{itemize}
 
@@ -102,9 +102,9 @@ The typical layer of a Convolutional Neural Network are:
 
 \item \textbf{Fully-connected layer}:neurons in a fully connected layer have full connections to all activations in the previous layer. Their activations can hence be computed with a matrix multiplication followed by a bias offset.In other libraries,fully connected blocks or layers are linear functions where each output dimension depends on all the input dimensions.MatConvNet does not distinguish between fully connected layers and convolutional blocks
 
-\item \textbf{ReLu}:the rectified linear unit will apply an elementwise activation function, such as the $ f(x) = max(0,x) $ thresholding at zero. This leaves the size of the volume unchanged 
+\item \textbf{ReLu}:the rectified linear unit will apply an element-wise activation function, such as the $ f(x) = max(0,x) $ thresholding at zero. This leaves the size of the volume unchanged 
 
-\item \textbf{SoftMax}: Soft Max is a loss functionakes the score compete through the normalization
+\item \textbf{SoftMax}: Soft Max is a loss function that makes the score compete through the normalization
 factor.Softmax can be seen as the combination of an activation function
 (exponential) and a normalization operator
 
@@ -144,7 +144,7 @@ I selected different network architectures for comparing it, after the training,
 
 \subsection{Create a validation set}
 
-In order to avoid overfitting I split the testing set into two sets; a validation test and a test set.The validetion set can be seen as a set of examples used to tune the parameters of the classifier. The final dataset is composed by:
+In order to avoid overfitting I split the testing set into two sets: a validation test and a test set.The validation set can be seen as a set of examples used to tune the parameters of the classifier. The final dataset is composed by:
 
 \begin{itemize}
 
@@ -156,7 +156,7 @@ In order to avoid overfitting I split the testing set into two sets; a validatio
 
 \subsection{Stochastic gradient descent with momentum}
 
-To train the network I used stochastich gradient descent with momentum. Stochastic gradient descent (often shortened in SGD) is a stochastic approximation of the gradient descent optimization method for minimizing an objective function that is written as a sum of differentiable functions. The problem of minimizing an objective function can be describe as:
+To train the network I used stochastic gradient descent with momentum. Stochastic gradient descent (often shortened in SGD) is a stochastic approximation of the gradient descent optimization method for minimizing an objective function that is written as a sum of differentiable functions. The problem of minimizing an objective function can be describe as:
 
 \begin{center}
 
@@ -164,7 +164,7 @@ To train the network I used stochastich gradient descent with momentum. Stochast
 
 \end{center}
 
-where the parameter $  $ which minimizes $ Q(w) $ is to be estimated. Each summand function $ Q_{i} $ is typically associated with the $ i-th $ observation in the data set (used for training). 
+where the parameter $ w $ which minimizes $ Q(w) $ is to be estimated. Each summand function $ Q_{i} $ is typically associated with the $ i-th $ observation in the data set (used for training). 
 Stochastic gradient descent with momentum remembers the update $ \Delta w $ at each iteration, and determines the next update as a convex combination of the gradient and the previous update
 
 \begin{center}
@@ -180,7 +180,7 @@ where $ \eta $ is the learning rate.
 The function cnn\textunderscore train.m can be used with different datasets and tasks by providing a suitable getBatch function (implemented in  cnn\textunderscore cwfid.m). The function automatically restarts after each training epoch by checkpointing. The function supports training on CPU or on one or more GPUs (specify the list of GPU IDs in the `gpus` option). Multi-GPU support is relatively primitive but sufficient to obtain a noticable speedup.
 
 \subsection{Results of the training}
-Here are the 6 networks training graph. On the left side there is the objective function and on the right side there is the error function.
+Here are the 6 network training graphs. On the left side there is the objective function and on the right side there is the error function.
 
 \begin{figure}[h]
 	\begin{center}
@@ -234,7 +234,7 @@ Here are the 6 networks training graph. On the left side there is the objective 
 
 \section{Compute the accuracy of each network}
 
-In order to evaluate the network I calculate the accuracy. The accuracy can be computed as:
+In order to evaluate the network I calculated the accuracy. The accuracy can be computed as:
 
 \begin{center}
 
@@ -269,7 +269,7 @@ where $ TP = $ true positive , $ TN =$ true negative , $ FP =$ false positive  a
 \end{figure}
 
 \newpage
-The network that has the highest accuracy is \textbf{network 5}. From now on I will discuss and talk about network 5 only because it has the best performance and it is the one that I used for the next step. 
+The network that has the highest accuracy is \textbf{network 5}. From now on I will discuss and talk about network 5 only, because it has the best performance and it is the one that I used for the next steps. 
 
 \section{Changing the number of maps of each convolutional filter}
 
@@ -300,7 +300,7 @@ Once the network has been selected I tried to change the number of maps of each 
 \end{figure}
 
 \newpage   
-This is the training graph with a better combination of number of maps. This configuration is the final one that I used for the given assignment and has a global accuracy of \textbf{94,33\%} \textbf{94,20\%} for crop \textbf{99,80\%} for ground and \textbf{89,00\%} for weed.
+This is the training graph with a better combinations of number of maps. This configuration is the final one that I used for the given assignment and has a global accuracy of \textbf{94,33\%}, \textbf{94,20\%} for crop, \textbf{99,80\%} for ground and \textbf{89,00\%} for weed.
 
 \begin{figure}[h]
 	\begin{center}
@@ -313,7 +313,7 @@ This is the training graph with a better combination of number of maps. This con
 
 \section{Calculate Confusion Matrix}
 
-In order to have a better evaluation of the network I calculated also the confusion matrix, also known as an error matrix, that is a specific table layout that allows visualization of the performance of the classifier.
+In order to have a better evaluation of the network I calculated also the confusion matrix, also known as error matrix, that is a specific table layout that allows visualization of the performance of the classifier.
 
 The Confusion matrix, for the testing set, is:
 
@@ -333,18 +333,18 @@ The Confusion matrix, for the testing set, is:
 
 \section{Sliding window approach}
 
-In order to have a rough segmentation of the training set I also used to evaluate the network the sliding window approach.It consist of:
+In order to have a rough segmentation of the training set I also used to evaluate the network the sliding window approach.It consists of:
 
 \begin{itemize}
 
 	\item take a testing image. The size of the testing image is $ 966\times 1296\times 3$
-	\item extract patches from that.I used patches of dimension $ 51\times 51 \times 3 $. 				  I used two kind of stride: 10 and 15. So I obtained respectively $ 11500 $ and $ 		 		  5063 $ patches
-	\item make a new image the same size of the original testing image. On this image, I 					  painted the central pixel of each of the patches with a color depending on the best  		  class that the classifier choosed. The color used are the same of the annotation 		          image of the dataset CWFID so green for crop, red for weed and black for ground
+	\item extract patches from that.I used patches of size $ 51\times 51 \times 3 $. 				  I used two kind of stride: 10 and 15. So I obtained respectively $ 11500 $ and $ 		 		  5063 $ patches
+	\item make a new image the same size of the original testing image. On this image, I 					  painted the central pixel of each of the patches with a color depending on the best  		  class that the classifier choosed. The color used are the same of the annotation 		          image of the dataset CWFID; green for crop, red for weed and black for ground
 	\item repeat for all the images of the testing set
 
 \end{itemize}
 
-What I noticed was that the networks works not as expected. In fact the result images were very different from the annotation image. The accuracy was about $ 33\% $ a very low accuracy if we compare with a $ 94\% $ accuracy found with the testing set.\\
+What I noticed was that the network works not as expected. In fact the result images were very different from the annotation images. The accuracy was about $ 33\% $, a very low accuracy if we compare it with a $ 94\% $ accuracy found with the testing set.\\
 Below I attached the result of the first testing image obtained with the sliding window approach with a stride of 10:
 
 \begin{figure}[!htb]
@@ -378,40 +378,39 @@ I tried to solve this problem by apply a threshold on the probabilities results 
 \end{center}
 
 where $groundVector $ is the vector containing the probabilities of the ground patches in descending order and $numberOfPatches $ is the number of patches apply to the image.\\
-What I get was that the results looks better with an accuracy close to $ 70\% $ but the networks failed to classify crop form weed. So I decided to apply the same threshold approach also for the crop probabilities and what I get are an overall accuracy from all the test images of 89,62\% for a stride of 10 and 91,25\% for a stride of 15.\\
+What I get was that the results looks better with an accuracy close to $ 70\% $ but the network failed to classify crop form weed. So I decided to apply the same threshold approach also for crop probabilities. What I get is an overall accuracy from all the test images of 89,62\% for a stride of 10 and 91,25\% for a stride of 15.\\
 Here are some results. The full results can be view in the gitHub repository\footnote{see Appendix Repository}.
 
-\begin{figure}[!htb]
-\minipage{0.6\textwidth}
+\begin{figure}[h]
   \includegraphics[width=\linewidth]{1.png}
   \caption{sliding window stride=15}\label{fig: sliding window 15 1}
-\endminipage\hfill
-\minipage{0.6\textwidth}
+\end{figure}
+\begin{figure}[h]
   \includegraphics[width=\linewidth]{3.png}
   \caption{sliding window stride=15}\label{fig:sliding window 15 2}
-\endminipage\hfill
 \end{figure}
 
-\begin{figure}[!htb]
-\minipage{0.6\textwidth}
+\begin{figure}[h]
+
   \includegraphics[width=\linewidth]{2.png}
   \caption{sliding window stride=10}\label{fig: sliding window 10 1}
-\endminipage\hfill
-\minipage{0.6\textwidth}
+\end{figure}
+
+\begin{figure}[h]
   \includegraphics[width=\linewidth]{6.png}
   \caption{sliding window stride=10}\label{fig:sliding window 10 2}
-\endminipage\hfill
+
 \end{figure}
 
 
 \chapter{Summary and future extensions}
 
 In this chapter I want to make some considerations about how the network works and some future extensions that can be applied in order to have a better performance of the network.
-If we look at the result of the sliding window we can see that in some images the network classifies some crop pixel as weed. This wrong classifications are due to the threshold approach applied in the section 4.5. In fact, if in the image there are more crop pixels than the one that I calculate in the training set (1,54\%) the network classifies only few pixels as crop. Below I attached an image that shows this behaviour of the network.
+If we look at the result of the sliding window we can see that in some images the network classifies some crop pixels as weed. This wrong classifications are due to the threshold approach applied in section 4.5. In fact, if in the image there are more crop pixels than the one that I calculate in the training set (1,54\%) the network classifies only few pixels as crop. Below I attached an image that shows this behaviour of the network.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.62]{15.png}
+		\includegraphics[width=\linewidth]{15.png}
 		\caption{bad sliding window result}
 		\label{fig:bad sliding window result}
 	\end{center}
@@ -422,11 +421,11 @@ The result show that a lot of crop pixels are marked as weed and also a lot of w
 
 \section{Possible extensions}
 
-In order to have a better performance of the network some solution and extensions can be done:
+In order to have a better performance of the network some solutions and extensions can be done:
 
 \begin{itemize}
 
-	\item \textbf{have a larger dataset}: if we have more patches the network could possibly work 			          better. In order to have more patches rotation could be applied
+	\item \textbf{have a larger dataset}: if we have more patches the network could possibly works 			          better. In order to have more patches rotation could be applied
 	
 	\item \textbf{resampling the dataset}: 
    \begin{enumerate}

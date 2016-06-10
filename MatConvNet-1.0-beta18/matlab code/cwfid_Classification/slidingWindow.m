@@ -121,13 +121,13 @@ for i=1 : size(slidingWindowImTesting,4)
    end
    
    figure
-   subplot(3,1,1)
+   subplot(1,3,1)
    imshow(slidingWindowImTesting(:,:,:,i));
    title('original')
-   subplot(3,1,2)
+   subplot(1,3,2)
    imshow(AnnotationIm(:,:,:,i));
    title('annotation')
-   subplot(3,1,3)
+   subplot(1,3,3)
    imshow(Im)
    title('best')
    

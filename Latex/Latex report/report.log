@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.8)  2 JUN 2016 18:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.8)  10 JUN 2016 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,22 +483,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5
 
-] [6 <./CNN.png>] [7] <init_1.png, id=260, 421.575pt x 316.18124pt>
-File: init_1.png Graphic file (type png)
+] [6 <./CNN.png>] [7]
+Overfull \hbox (4.43463pt too wide) in paragraph at lines 159--160
+\OT1/cmr/m/n/10 To train the net-work I used stochas-tic gra-di-ent de-scent wi
+th mo-men-tum. Stochas-
+ []
 
-<use init_1.png>
+<init_1.png, id=260, 421.575pt x 316.18124pt>
+File: init_1.png Graphic file (type png)
+ <use init_1.png>
 Package pdftex.def Info: init_1.png used on input line 187.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
- [8] <init_2.png, id=267, 429.10312pt x 317.68687pt>
+ [8]
+<init_2.png, id=267, 429.10312pt x 317.68687pt>
 File: init_2.png Graphic file (type png)
-
-<use init_2.png>
+ <use init_2.png>
 Package pdftex.def Info: init_2.png used on input line 195.
 (pdftex.def)             Requested size: 214.55103pt x 158.84303pt.
- <init_3.png, id=268, 429.10312pt x 317.68687pt>
-File: init_3.png Graphic file (type png)
 
-<use init_3.png>
+<init_3.png, id=268, 429.10312pt x 317.68687pt>
+File: init_3.png Graphic file (type png)
+ <use init_3.png>
 Package pdftex.def Info: init_3.png used on input line 203.
 (pdftex.def)             Requested size: 214.55103pt x 158.84303pt.
 
@@ -581,77 +586,82 @@ File: annotation.png Graphic file (type png)
 Package pdftex.def Info: annotation.png used on input line 356.
 (pdftex.def)             Requested size: 172.5pt x 128.57053pt.
  [15]
-<1.png, id=308, 421.575pt x 316.18124pt>
+<1.png, id=308, 1396.4672pt x 753.5653pt>
 File: 1.png Graphic file (type png)
  <use 1.png>
-Package pdftex.def Info: 1.png used on input line 386.
-(pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
+Package pdftex.def Info: 1.png used on input line 385.
+(pdftex.def)             Requested size: 345.0pt x 186.17166pt.
 
-<3.png, id=309, 421.575pt x 316.18124pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<3.png, id=309, 1396.4672pt x 753.5653pt>
 File: 3.png Graphic file (type png)
  <use 3.png>
-Package pdftex.def Info: 3.png used on input line 390.
-(pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
+Package pdftex.def Info: 3.png used on input line 389.
+(pdftex.def)             Requested size: 345.0pt x 186.17166pt.
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 385--393
-[]$[]$ $[]$ 
- []
 
-<2.png, id=310, 421.575pt x 316.18124pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<2.png, id=310, 1396.4672pt x 753.5653pt>
 File: 2.png Graphic file (type png)
  <use 2.png>
-Package pdftex.def Info: 2.png used on input line 397.
-(pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
+Package pdftex.def Info: 2.png used on input line 395.
+(pdftex.def)             Requested size: 345.0pt x 186.17166pt.
 
-<6.png, id=311, 429.10312pt x 317.68687pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<6.png, id=311, 1396.4672pt x 753.5653pt>
 File: 6.png Graphic file (type png)
  <use 6.png>
-Package pdftex.def Info: 6.png used on input line 401.
-(pdftex.def)             Requested size: 207.0021pt x 153.25386pt.
+Package pdftex.def Info: 6.png used on input line 400.
+(pdftex.def)             Requested size: 345.0pt x 186.17166pt.
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 396--404
-[]$[]$ $[]$ 
- []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16 <./stride10im1.png (PNG copy)> <./annotation.png (PNG copy)>] [17 <./1.png 
-(PNG copy)> <./3.png (PNG copy)> <./2.png (PNG copy)> <./6.png (PNG copy)>]
+(PNG copy)> <./3.png (PNG copy)>] [18 <./2.png (PNG copy)> <./6.png (PNG copy)>
+]
 Chapter 5.
-<15.png, id=321, 421.575pt x 316.18124pt>
+<15.png, id=326, 1396.4672pt x 753.5653pt>
 File: 15.png Graphic file (type png)
  <use 15.png>
-Package pdftex.def Info: 15.png used on input line 414.
-(pdftex.def)             Requested size: 261.3738pt x 196.03033pt.
- [18
+Package pdftex.def Info: 15.png used on input line 413.
+(pdftex.def)             Requested size: 345.0pt x 186.17166pt.
+ [19
 
- <./15.png (PNG copy)>] [19]
+ <./15.png (PNG copy)>] [20]
 Chapter 6.
 
-Overfull \hbox (9.66469pt too wide) in paragraph at lines 448--449
+Overfull \hbox (9.66469pt too wide) in paragraph at lines 447--448
 \OT1/cmr/m/n/10 found at this repos-i-tory [][]$\OT1/cmtt/m/n/10 https : / / gi
 thub . com / ste93ste / cwfid _ classification$[][] 
  []
 
 
-Overfull \hbox (7.08176pt too wide) in paragraph at lines 463--464
+Overfull \hbox (7.08176pt too wide) in paragraph at lines 462--463
 []\OT1/cmr/m/n/10 Matlab R2016a ([][]$\OT1/cmtt/m/n/10 http : / / uk . mathwork
 s . com / products / matlab/$[][]\OT1/cmr/m/n/10 ) : to com-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
-[20
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+[21
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 468.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: AE9F1528E702748A425047FF398044DE;1984.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
+(rerunfilecheck)             Checksum: 835AFDD9E02FEBB695EBC8ADC9D2D89B;1985.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 468.
  ) 
 Here is how much of TeX's memory you used:
- 7991 strings out of 495020
- 114726 string characters out of 6181325
+ 7992 strings out of 495020
+ 114733 string characters out of 6181325
  201051 words of memory out of 5000000
  11034 multiletter control sequences out of 15000+600000
  10738 words of font info for 39 fonts, out of 8000000 for 9000
@@ -671,10 +681,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (21 pages, 892335 bytes).
+Output written on report.pdf (22 pages, 1971845 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 351 compressed objects within 4 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

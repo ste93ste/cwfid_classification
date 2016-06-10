@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.8)  2 JUN 2016 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.8)  10 JUN 2016 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1046,27 +1046,25 @@ Package pdftex.def Info: annotation.png used on input line 483.
 ] [26
 
 ]
-<2.png, id=774, 421.575pt x 316.18124pt>
+<2.png, id=774, 1396.4672pt x 753.5653pt>
 File: 2.png Graphic file (type png)
  <use 2.png>
-Package pdftex.def Info: 2.png used on input line 538.
-(pdftex.def)             Requested size: 171.14764pt x 128.36147pt.
+Package pdftex.def Info: 2.png used on input line 532.
+(pdftex.def)             Requested size: 342.2953pt x 184.71135pt.
 
-<6.png, id=775, 429.10312pt x 317.68687pt>
-File: 6.png Graphic file (type png)
- <use 6.png>
-Package pdftex.def Info: 6.png used on input line 538.
-(pdftex.def)             Requested size: 171.14764pt x 126.70892pt.
- [27
+Overfull \vbox (24.38522pt too high) detected at line 532
+ []
 
- <./2.png (PNG copy)> <./6.png (PNG copy)>] <15.png, id=804, 421.575pt x 316.18
-124pt>
+[27
+
+ <./2.png (PNG copy)>] <15.png, id=802, 1396.4672pt x 753.5653pt>
 File: 15.png Graphic file (type png)
- <use 15.png>
-Package pdftex.def Info: 15.png used on input line 556.
-(pdftex.def)             Requested size: 261.3738pt x 196.03033pt.
 
-Overfull \vbox (37.83337pt too high) detected at line 556
+<use 15.png>
+Package pdftex.def Info: 15.png used on input line 550.
+(pdftex.def)             Requested size: 342.2953pt x 184.71135pt.
+
+Overfull \vbox (26.51439pt too high) detected at line 550
  []
 
 [28
@@ -1083,11 +1081,11 @@ Overfull \vbox (37.83337pt too high) detected at line 556
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 578.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 578.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 572.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 572.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 578.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 578.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 572.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 572.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: 50F6B5CB69180B0FD79F4FEDFC60AD6D;268.
 
@@ -1095,32 +1093,29 @@ Package rerunfilecheck Info: File `slide.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 578.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 572.
  ) 
 Here is how much of TeX's memory you used:
- 16925 strings out of 495020
- 323636 string characters out of 6181325
- 386934 words of memory out of 5000000
- 19642 multiletter control sequences out of 15000+600000
+ 16915 strings out of 495020
+ 323507 string characters out of 6181325
+ 385889 words of memory out of 5000000
+ 19635 multiletter control sequences out of 15000+600000
  13762 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 48i,16n,60p,533b,657s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation30} has been referenced but does not ex
-ist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb>
-Output written on slide.pdf (29 pages, 726007 bytes).
+ 48i,16n,60p,535b,657s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb>
+Output written on slide.pdf (29 pages, 1122949 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 831 compressed objects within 9 object streams
- 80 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 904 PDF objects out of 1000 (max. 8388607)
+ 828 compressed objects within 9 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

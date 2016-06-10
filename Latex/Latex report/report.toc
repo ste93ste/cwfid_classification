@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {3.1}MatConvNet library}{5}{section.3.1}
 \contentsline {section}{\numberline {3.2}What is a Convolutional Neural Network?}{5}{section.3.2}
 \contentsline {section}{\numberline {3.3}Build the architecture of the network}{6}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Typical layer of a CNN}{6}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Typical layers of a CNN}{6}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Typical architecture}{7}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Selected architectures}{7}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Train the network}{8}{section.3.4}
@@ -21,9 +21,9 @@
 \contentsline {section}{\numberline {4.3}Calculate Confusion Matrix}{15}{section.4.3}
 \contentsline {section}{\numberline {4.4}Sliding window approach}{15}{section.4.4}
 \contentsline {section}{\numberline {4.5}Umbalanced class problem}{16}{section.4.5}
-\contentsline {chapter}{\numberline {5}Summary and future extensions}{18}{chapter.5}
-\contentsline {section}{\numberline {5.1}Possible extensions}{19}{section.5.1}
-\contentsline {chapter}{\numberline {6}Appendix}{20}{chapter.6}
-\contentsline {section}{\numberline {6.1}Repository}{20}{section.6.1}
-\contentsline {section}{\numberline {6.2}Reference document}{20}{section.6.2}
-\contentsline {section}{\numberline {6.3}Software and tool used}{20}{section.6.3}
+\contentsline {chapter}{\numberline {5}Summary and future extensions}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Possible extensions}{20}{section.5.1}
+\contentsline {chapter}{\numberline {6}Appendix}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Repository}{21}{section.6.1}
+\contentsline {section}{\numberline {6.2}Reference document}{21}{section.6.2}
+\contentsline {section}{\numberline {6.3}Software and tool used}{21}{section.6.3}

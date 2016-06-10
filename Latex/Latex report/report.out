@@ -7,7 +7,7 @@
 \BOOKMARK [1][-]{section.3.1}{MatConvNet library}{chapter.3}% 7
 \BOOKMARK [1][-]{section.3.2}{What is a Convolutional Neural Network?}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.3}{Build the architecture of the network}{chapter.3}% 9
-\BOOKMARK [2][-]{subsection.3.3.1}{Typical layer of a CNN}{section.3.3}% 10
+\BOOKMARK [2][-]{subsection.3.3.1}{Typical layers of a CNN}{section.3.3}% 10
 \BOOKMARK [2][-]{subsection.3.3.2}{Typical architecture}{section.3.3}% 11
 \BOOKMARK [2][-]{subsection.3.3.3}{Selected architectures}{section.3.3}% 12
 \BOOKMARK [1][-]{section.3.4}{Train the network}{chapter.3}% 13

@@ -18,13 +18,13 @@
 
 \chapter{Purpose}
 
-The purpose of this document is to help the user to understand how to replicate the experiment step-by-step.
+The purpose of this document is to help the user understand how to replicate the experiment step-by-step.
 
 \section{Prerequisites}
 
 \subsection{Configuration}
 
-The configuration used in the project was:
+The configuration used in the project is:
 
 \begin{itemize}
 
@@ -34,7 +34,7 @@ The configuration used in the project was:
 
 \end{itemize}
 
-It works also with Mac OS but have some problems with Windows (in particular with Windows 10).
+It works also with Mac OS, but have some problems with Windows (in particular with Windows 10).
 
 \subsection{Download the material}
 
@@ -42,15 +42,15 @@ The code, the dataset and MatConvNet library can be donloaded at this link: \url
  
 \chapter{Matlab code}
 
-All the matlab code can be found in cwfid\textunderscore classification/MatconvNet-1.0-beta18/matlab code/cwfid\textunderscore classification.
+All the matlab code can be found in: cwfid\textunderscore classification/MatconvNet-1.0-beta18/matlab code/cwfid\textunderscore classification.
 
 \section{cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m}
 
-There are six different files with this name (the only part that changes is the final number. These files are functions that creates  different networks. You can find the description of the six types of network in the report.
+There are six different files with this name (the only part that changes is the final number). These files are functions that creates different networks. You can find the description of the six types of network in the report.
 
 \section{cnn\textunderscore cwfid.m}
 
-This function is the core of the project. It calls the function cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m described before and it then calls the function cnn\textunderscore train.m to train the network. If you want to change and uses a different network you can modify line 36. The network 5 is the one that has best results and the default network.
+This function is the core of the project. It calls the function cnn\textunderscore cwfid \textunderscore init \textunderscore *number.m described before and it then calls the function cnn\textunderscore train.m to train the network. If you want to change and use a different network you can modify line 36. Network 5 is the one that has best results and the default network.
 
 \begin{lstlisting}
 
@@ -59,14 +59,14 @@ net = cnn_cwfid_init_5('batchNormalization', opts.batchNormalization, ...
 
 \end{lstlisting}
 
-If you change the network, remembet to delete the previous training folder because the function otherwise will not train another network because it reuses the precedent training results. The folder to be removed can be found at the path  cwfid\textunderscore classification/MatconvNet-1.0-beta18/data/ and its name is cwfid-baselinesimplenn-bnorm. 
+If you change the network, remember to delete the previous training folder because otherwise the function will not train another network (it reuses the precedent training results). The folder to be removed can be found at the path: cwfid\textunderscore classification/MatconvNet-1.0-beta18/data/ and its name is: cwfid-baselinesimplenn-bnorm. 
 
 The function have also some attributes that can be modified such as:
 
 \begin{itemize}
 
-	\item vl\textunderscore compilenn('enableGpu', true); if you want to enableGpu. This can make the training faster but needs to have a dedicated and configured GPU. Default is false
-	\item opts.networkType = 'dagnn' ; if you want to use dagnn network istead simplenn. Dagnn were not used in this project because they have similar or worse results
+	\item vl\textunderscore compilenn('enableGpu', true); if you want to enableGpu. This can make the training faster but it needs to have a dedicated and configured GPU. Default is false
+	\item opts.networkType = 'dagnn' ; if you want to use dagnn network instead simplenn. Dagnn were not used in this project because they have similar or worse results comparing to simplenn network
 	
 
 \end{itemize}
@@ -86,7 +86,7 @@ This script plots the accuracy of the different configurations of number of maps
 
 \section{classUmbalancingThreshold.m}
 
-This script count the percentage of frequency in the training set of crop,weed and ground used then in the slidingWindow.m script.
+This script counts the percentage of frequency in the training set of crop,weed and ground. It is used then in the slidingWindow.m script.
 
 \section{slidingWindow.m}
 
